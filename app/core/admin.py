@@ -16,6 +16,14 @@ class UserAdmin(BaseUserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login",)})
     )
+    add_fieldsets = (
+        (None, {
+            "classes": ("wide",),
+            # https://docs.djangoproject.com/en/3.1/ref/contrib/admin/
+            "fields": ("email", "password1", "password2"),
+
+        }),
+    )
 
 
 admin.site.register(models.User, UserAdmin)
