@@ -1,0 +1,11 @@
+local-build:
+	docker compose build
+local-up:
+	docker compose up
+local-up-d:
+	docker compose up -d
+local-down:
+	docker compose down
+local-run-test:
+	docker compose run app sh -c "python manage.py test && flake8"
+	#docker compose run app sh -c 'python manage.py test core/'
